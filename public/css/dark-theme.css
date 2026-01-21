@@ -1,0 +1,41 @@
+/* Main content background */
+.transition-slowest .flex-col .overflow-hidden {
+    background-color: #0e0f11 !important;
+}
+
+/* Location list */
+#location-list-containrer {
+    background-color: #ffffff !important;
+}
+
+/* Text cursor background */
+.overflow-x-hidden .cursor-text span {
+    background-color: #0e0f11 !important;
+}
+
+/* Layout section background */
+.transition-slowest .flex-col .lg\:justify-between {
+    background-color: #191a1c !important;
+}
+
+/* Quick actions & search */
+#quickActions,
+#globalSearchOpener {
+    background-color: #191a1c !important;
+}
+
+/* Sidebar items */
+#sidebar-v2 .cursor-pointer.rounded-r-md {
+    background-color: #191a1c !important;
+}
+
+/* Sidebar hover */
+a[id^="sb_"]:hover {
+    background-color: #212121 !important;
+}
+
+/* Sidebar active */
+a[id^="sb_"].active,
+a[id^="sb_"][aria-current="page"] {
+    background-color: #212121 !important;
+}
