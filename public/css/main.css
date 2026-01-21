@@ -1,0 +1,9 @@
+/* ================= Main menu border ================= */
+.transition-slowest .flex-col .overflow-hidden {
+    border-right: 1px solid #e5e7eb;
+}
+/* ================= Header border ================= */
+.hl_header {
+    box-shadow: none !important;
+    border-bottom: 1px solid #e5e7eb;
+}

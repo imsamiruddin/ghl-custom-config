@@ -1,15 +1,16 @@
 /**
  * ============================================
- * GHL Location Branding Script (Optimized)
+ * GHL Location Branding Script (Ultra Optimized)
+ * ============================================
  * - Dynamic tab title
  * - Dynamic favicon (letter-based SVG)
  * - Agency logo replacement
- * ============================================
- * Improvements:
- * - No polling (no setInterval)
- * - Uses MutationObserver
- * - Lower CPU usage
- * - Instant reaction to location switch
+ *
+ * Performance:
+ * - Debounced MutationObserver
+ * - Zero polling
+ * - Minimal DOM reads
+ * - SPA safe (GoHighLevel)
  */
 
 (function () {
@@ -22,9 +23,12 @@
 
   const LOGO_CONTAINER_SELECTOR = ".agency-logo-container";
 
+  const DEBOUNCE_DELAY = 150;
+
   /* ================= STATE ================= */
 
   let lastCompanyName = "";
+  let debounceTimer = null;
 
   /* ================= HELPERS ================= */
 
@@ -59,15 +63,13 @@
     return "data:image/svg+xml;base64," + btoa(svg);
   }
 
-  /* ================= TAB TITLE ================= */
+  /* ================= UPDATES ================= */
 
   function updateTitle(company) {
     if (document.title !== company) {
       document.title = company;
     }
   }
-
-  /* ================= FAVICON ================= */
 
   function updateFavicon(company) {
     const letter = company.charAt(0).toUpperCase();
@@ -81,15 +83,18 @@
       document.head.appendChild(link);
     }
 
-    link.href = url;
+    if (link.href !== url) {
+      link.href = url;
+    }
   }
-
-  /* ================= LOGO ================= */
 
   function applyCustomLogo(container, company) {
     const letter = company.charAt(0).toUpperCase();
     const svg = generateLetterSVG(letter);
     const dataUrl = svgToDataUrl(svg);
+
+    if (container.dataset.currentLogo === company) return;
+    container.dataset.currentLogo = company;
 
     container.style.backgroundImage = `url("${dataUrl}")`;
     container.style.backgroundRepeat = "no-repeat";
@@ -104,15 +109,7 @@
     });
   }
 
-  function restoreDefaultLogo(container) {
-    container.style.backgroundImage = "";
-    container.querySelectorAll("img, svg").forEach(function (el) {
-      el.style.opacity = "";
-      el.style.visibility = "";
-    });
-  }
-
-  /* ================= MAIN UPDATE ================= */
+  /* ================= CORE ================= */
 
   function updateBranding() {
     if (!isLocationPage()) return;
@@ -131,12 +128,15 @@
     }
   }
 
+  function scheduleUpdate() {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(updateBranding, DEBOUNCE_DELAY);
+  }
+
   /* ================= OBSERVER ================= */
 
   function startObserver() {
-    const observer = new MutationObserver(function () {
-      updateBranding();
-    });
+    const observer = new MutationObserver(scheduleUpdate);
 
     observer.observe(document.body, {
       childList: true,
@@ -144,7 +144,7 @@
       characterData: true,
     });
 
-    // Initial run
+    // Initial branding
     updateBranding();
   }
 
