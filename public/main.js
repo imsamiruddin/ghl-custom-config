@@ -1,14 +1,15 @@
 /**
  * ============================================
- * GHL Location Branding Script
+ * GHL Location Branding Script (Optimized)
  * - Dynamic tab title
  * - Dynamic favicon (letter-based SVG)
  * - Agency logo replacement
  * ============================================
- * Safe for:
- * - GoHighLevel
- * - Cloudflare Pages CDN
- * - No minify required
+ * Improvements:
+ * - No polling (no setInterval)
+ * - Uses MutationObserver
+ * - Lower CPU usage
+ * - Instant reaction to location switch
  */
 
 (function () {
@@ -20,8 +21,6 @@
     ".lg\\:justify-between .items-center .hl_switcher-loc-name";
 
   const LOGO_CONTAINER_SELECTOR = ".agency-logo-container";
-
-  const CHECK_INTERVAL = 400;
 
   /* ================= STATE ================= */
 
@@ -132,16 +131,28 @@
     }
   }
 
-  /* ================= INIT ================= */
+  /* ================= OBSERVER ================= */
 
-  function start() {
+  function startObserver() {
+    const observer = new MutationObserver(function () {
+      updateBranding();
+    });
+
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+      characterData: true,
+    });
+
+    // Initial run
     updateBranding();
-    setInterval(updateBranding, CHECK_INTERVAL);
   }
 
+  /* ================= INIT ================= */
+
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", start);
+    document.addEventListener("DOMContentLoaded", startObserver);
   } else {
-    start();
+    startObserver();
   }
 })();
