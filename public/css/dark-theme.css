@@ -14,7 +14,7 @@
 }
 
 /* Layout section background */
-.transition-slowest .flex-col .lg\:justify-between {
+#location-switcher-sidbar-v2.cursor-pointer {
     background-color: #191a1c !important;
 }
 
