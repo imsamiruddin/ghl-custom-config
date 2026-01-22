@@ -1,0 +1,137 @@
+/* Sourceurl: publiccss/leadcora-login.css */
+.hl_login {
+    background: #fff !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100vh;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.hl_login--header,
+.hl_login .hl_login--header .container-fluid {
+    display: none !important;
+}
+div.hl_login--body {
+    max-width: 450px !important;
+    width: 100% !important;
+    background: #fff !important;
+    border-radius: 12px !important;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eaeaea !important;
+    overflow: visible !important;
+}
+.hl_login--body .card {
+    width: 100% !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+.hl_login--body .card .card-body {
+    padding: 40px 30px !important;
+}
+.hl_login--body .login-card-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.hl_login--body .heading2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.hl_login .form-control {
+    background: #fff !important;
+    border: 1px solid #ccc !important;
+    border-radius: 6px !important;
+    padding: 12px !important;
+    font-size: 0.9rem;
+    color: #333;
+}
+#email {
+    display: flex;
+    margin: 0 !important;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    border-radius: 5px;
+    border: 1px solid #d1d5db;
+    background: #fff;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+}
+#forgot_passowrd_btn {
+    color: #808080;
+    text-align: right;
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    margin-top: 20px;
+}
+#forgot_passowrd_btn:hover {
+    color: #6e6e6e;
+}
+.hl_login .btn.btn-blue,
+.hl_login .btn.btn-blue:active,
+.hl_login .btn.btn-blue:focus {
+    background-color: #2563eb !important;
+    border-color: #2563eb !important;
+    color: #fff !important;
+    border-radius: 6px;
+    min-height: 48px;
+    transition: background-color 0.3s ease;
+}
+.hl_login .btn.btn-blue:hover {
+    background-color: #1d4ed8 !important;
+    border-color: #1d4ed8 !important;
+}
+.hl_login button {
+    min-height: 48px;
+}
+.hl_login .button-holder.form-group {
+    margin-top: 20px !important;
+}
+#wl_google_login_button,
+.card-body div .focus\:outline-none {
+    min-height: 55px;
+    background-color: #2563eb;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+.card-body div .focus\:outline-none:hover {
+    background-color: #3b82f6;
+}
+.card-body div .focus\:outline-none:active {
+    background-color: #22c55e;
+}
+.card-body .foot-note .font-semibold {
+    color: #808080;
+}
+.card-body .foot-note .font-semibold:hover {
+    color: #6e6e6e;
+}
+div.hl_login--body {
+    position: relative !important;
+    margin-top: 60px;
+}
+.hl_login--body .login-card-heading {
+    position: absolute !important;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+}
+.hl_login--body .heading2 {
+    font-weight: 600;
+}
+#wl_google_login_button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #333;
+    border-radius: 6px;
+    min-height: 55px;
+    transition: all 0.3s ease;
+}
+#wl_google_login_button:hover {
+    background-color: #fff;
+    border-color: #85e900;
+}
