@@ -1,0 +1,223 @@
+/* =========================================================
+   MAIN LOGIN PAGE LAYOUT
+   Centers the login card and removes default header
+========================================================= */
+
+.hl_login {
+    background: #fff !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100vh;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Hide default header */
+.hl_login--header,
+.hl_login .hl_login--header .container-fluid {
+    display: none !important;
+}
+
+/* =========================================================
+   LOGIN CARD CONTAINER
+   Card size, border, shadow, and positioning
+========================================================= */
+
+div.hl_login--body {
+    max-width: 450px !important; /* updated width */
+    width: 100% !important;
+    background: #fff !important;
+    border-radius: 12px !important;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eaeaea !important; /* add border */
+    overflow: visible !important;
+}
+
+/* Card wrapper reset */
+.hl_login--body .card {
+    width: 100% !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+/* Card inner spacing */
+.hl_login--body .card .card-body {
+    padding: 40px 30px !important;
+}
+
+/* =========================================================
+   LOGIN TITLE / HEADING
+========================================================= */
+
+.hl_login--body .login-card-heading {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.hl_login--body .heading2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* =========================================================
+   INPUT FIELDS STYLING
+========================================================= */
+
+.hl_login .form-control {
+    background: #fff !important;
+    border: 1px solid #ccc !important;
+    border-radius: 6px !important;
+    padding: 12px !important;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* Email field specific styling */
+#email {
+    display: flex;
+    margin: 0 !important;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+    border-radius: 5px;
+    border: 1px solid #d1d5db;
+    background: #fff;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+/* =========================================================
+   FORGOT PASSWORD LINK
+========================================================= */
+
+#forgot_passowrd_btn {
+    color: #808080;
+    text-align: right;
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 18px;
+    margin-top: 20px;
+}
+
+#forgot_passowrd_btn:hover {
+    color: #6e6e6e;
+}
+
+/* =========================================================
+   PRIMARY LOGIN BUTTON
+========================================================= */
+
+.hl_login .btn.btn-blue,
+.hl_login .btn.btn-blue:active,
+.hl_login .btn.btn-blue:focus {
+    background-color: #2563eb !important;
+    border-color: #2563eb !important;
+    color: #fff !important;
+    border-radius: 6px;
+    min-height: 48px;
+    transition: background-color 0.3s ease;
+}
+
+.hl_login .btn.btn-blue:hover {
+    background-color: #1d4ed8 !important;
+    border-color: #1d4ed8 !important;
+}
+
+/* Button height consistency */
+.hl_login button {
+    min-height: 48px;
+}
+
+/* Button spacing */
+.hl_login .button-holder.form-group {
+    margin-top: 20px !important;
+}
+
+/* =========================================================
+   SIGN IN WITH GOOGLE BUTTON (CUSTOM STATES)
+========================================================= */
+
+/* Shared Google button styles */
+#wl_google_login_button,
+.card-body div .focus\:outline-none {
+    min-height: 55px;
+    background-color: #2563eb; /* Primary blue */
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover state */
+.card-body div .focus\:outline-none:hover {
+    background-color: #3b82f6; /* light blue on hover */
+}
+
+/* Active state */
+.card-body div .focus\:outline-none:active {
+    background-color: #22c55e; /* green on click */
+}
+
+/* =========================================================
+   FOOTER NOTE TEXT
+========================================================= */
+
+.card-body .foot-note .font-semibold {
+    color: #808080;
+}
+
+.card-body .foot-note .font-semibold:hover {
+    color: #6e6e6e;
+}
+
+/* =========================================================
+   OPTIONAL: HIDE "SIGN INTO YOUR ACCOUNT" TITLE
+========================================================= */
+
+/*
+.card-body .login-card-heading h2 {
+    display: none !important;
+}
+*/
+
+/* =========================================================
+   TITLE POSITIONING OUTSIDE CARD
+========================================================= */
+
+div.hl_login--body {
+    position: relative !important;
+    margin-top: 60px; /* visual spacing only */
+}
+
+/* Floating title above the card */
+.hl_login--body .login-card-heading {
+    position: absolute !important;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+}
+
+/* Bold title text */
+.hl_login--body .heading2 {
+    font-weight: 600;
+}
+
+/* =========================================================
+   GOOGLE BUTTON (WHITE VARIANT)
+========================================================= */
+
+#wl_google_login_button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #333;
+    border-radius: 6px;
+    min-height: 55px;
+    transition: all 0.3s ease;
+}
+
+#wl_google_login_button:hover {
+    background-color: #fff;
+    border-color: #85e900; /* Border turns green on hover */
+}
